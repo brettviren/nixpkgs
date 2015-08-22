@@ -14711,6 +14711,9 @@ let
     inherit (xlibs) libXmu;
   };
 
+  rootsys = callPackage ../development/libraries/physics/rootsys {
+  };
+
   g4py = callPackage ../development/libraries/physics/geant4/g4py { };
 
   ### MISC

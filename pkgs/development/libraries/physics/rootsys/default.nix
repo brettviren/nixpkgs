@@ -9,6 +9,13 @@ stdenv.mkDerivation rec {
     sha256 = "16irxlpl5xirz4v5mnnfs672j6v1j21lmf4xjrjzabjrllvmwhc1";
   };
 
+  # CMAKE_INSTALL_RPATH_USE_LINK_PATH is set to FALSE in
+  # <rootsrc>/cmake/modules/RootBuildOptions.cmake.
+  # This patch sets it to TRUE.
+  patches = [
+    ./cmake.patch
+  ];
+
   enableParallelBuilding = true;
 
   # existence of configure hides cmake
